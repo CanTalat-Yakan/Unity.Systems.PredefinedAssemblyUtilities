@@ -50,8 +50,10 @@ namespace UnityEssentials
 
             // 3. Check type implementations
             List<Type> types = new();
-            AddTypesFromAssembly(assemblyTypes[AssemblyType.AssemblyCSharp], types, interfaceType);
-            AddTypesFromAssembly(assemblyTypes[AssemblyType.AssemblyCSharpFirstPass], types, interfaceType);
+            if (assemblyTypes.TryGetValue(AssemblyType.AssemblyCSharp, out var csharpTypes))
+                AddTypesFromAssembly(csharpTypes, types, interfaceType);
+            if (assemblyTypes.TryGetValue(AssemblyType.AssemblyCSharpFirstPass, out var firstPassTypes))
+                AddTypesFromAssembly(firstPassTypes, types, interfaceType);
 
             return types;
         }
