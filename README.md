@@ -24,7 +24,7 @@ Install the Unity Essentials entry package via Unity's Package Manager, then ins
 
 ---
 
-# Predefined Assembly Utilities
+# Predefined Assembly Utility
 
 > Quick overview: Helpers for mapping Unity’s common assemblies and discovering loaded types that implement a given interface or base type across the game assemblies.
 
@@ -53,7 +53,7 @@ using System.Reflection;
 using UnityEssentials;
 
 string name = Assembly.GetExecutingAssembly().GetName().Name;
-var asmType = PredefinedAssemblyUtilities.GetAssemblyType(name);
+var asmType = PredefinedAssemblyUtility.GetAssemblyType(name);
 // asmType is AssemblyCSharp, AssemblyCSharpFirstPass, etc., or null if unknown
 ```
 
@@ -64,7 +64,7 @@ using System.Collections.Generic;
 using UnityEssentials;
 
 // Example: collect all event types implementing a marker interface
-IReadOnlyList<Type> eventTypes = PredefinedAssemblyUtilities.GetTypes(typeof(IMyMarkerInterface));
+IReadOnlyList<Type> eventTypes = PredefinedAssemblyUtility.GetTypes(typeof(IMyMarkerInterface));
 foreach (var t in eventTypes)
 {
     UnityEngine.Debug.Log($"Discovered: {t.FullName}");
@@ -95,8 +95,8 @@ Typical integration
   - The parameter is named `interfaceType`, but any base type is supported; discovery returns all types assignable to it
 
 ## Files in This Package
-- `Runtime/PredefinedAssemblyUtilities.cs` – Assembly name mapping and type discovery across predefined game assemblies
-- `Runtime/UnityEssentials.PredefinedAssemblyUtilities.asmdef` – Runtime assembly definition
+- `Runtime/PredefinedAssemblyUtility.cs` – Assembly name mapping and type discovery across predefined game assemblies
+- `Runtime/UnityEssentials.PredefinedAssemblyUtility.asmdef` – Runtime assembly definition
 
 ## Tags
 unity, reflection, assemblies, type-discovery, appdomain, interface, base-type, runtime, utilities
