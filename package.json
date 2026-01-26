@@ -1,7 +1,7 @@
 {
-  "name": "com.unityessentials.predefinedassemblyutility",
+  "name": "com.unityessentials.predefinedassembly",
   "version": "1.0.0",
-  "displayName": "Unity Systems PredefinedAssemblyUtility",
+  "displayName": "Unity Systems PredefinedAssembly",
   "description": "This is a part of the UnityEssentials Ecosystem",
   "unity": "6000.0",
   "unityRelease": null,
